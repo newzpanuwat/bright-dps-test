@@ -1,27 +1,41 @@
-# React + TypeScript + Vite
+# Mini Project: Poke API with React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Here are the details for the Mini Project:
 
-Currently, two official plugins are available:
+- Request data from this site: [pokeapi](https://pokeapi.co/)
+- Create the frontend based on this Figma design: [Figma](https://www.figma.com/file/0kgXM1XwWwPfbh7oYoNaGr/BD---%5BDEV%5D-Mini-Project-Template?node-id=2005%3A57773)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requirements:
 
-## Expanding the ESLint configuration
+- Project must be written with React
+- JavaScript might be used but TypeScript is preferred
+- Project must be completed within 24 hours
+- Project must be commit to a local git repository
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Installation
 
-- Configure the top-level `parserOptions` property like this:
+- Yarn
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+   yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- NPM
+
+```
+   npm install
+```
+
+# Run Application (I prefer yarn)
+
+- Run (dev) server
+
+```
+   $ yarn dev
+```
+
+- Build application
+
+```
+   $ yarn build
+```
