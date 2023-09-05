@@ -1,7 +1,7 @@
 /* Roboto Regular */
 @font-face {
   font-family: "Roboto";
-  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 /* Encode Sans Regular */
 @font-face {
   font-family: "Encode Sans";
-  src: url("./fonts/EncodeSans-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/EncodeSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -162,6 +162,7 @@
 .text-primary-color {
   color: var(--primary-color);
 }
+
 .text-secondary-color {
   color: var(--secondary-color);
 }
