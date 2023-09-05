@@ -1,0 +1,171 @@
+/* Roboto Regular */
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Encode Sans Regular */
+@font-face {
+  font-family: "Encode Sans";
+  src: url("./fonts/EncodeSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Primary */
+  --primary-color: #024e74;
+  --primary10-color: #acd2e5;
+  --primary20-color: #3886af;
+  --primary40-color: #003a57;
+  --primary50-color: #002a3f;
+
+  /* Secondary */
+  --secondary-color: #ebf8fe;
+  --secondary10-color: #f4fcff;
+  --secondary40-color: #d4ebf5;
+
+  /* Accent */
+  --accent-color: #15bebf;
+  --accent10-color: #aff9fa;
+  --accent20-color: #3cd5d6;
+  --accent40-color: #009091;
+  --accent50-color: #016468;
+
+  /* Error */
+  --error-color: #d40300;
+  --error10-color: #ffe7e7;
+  --error20-color: #ffbfbe;
+  --error40-color: #ab0300;
+  --error50-color: #670100;
+
+  /* Warning */
+  --warning-color: #ffbc10;
+  --warning10-color: #ffe8ae;
+  --warning20-color: #ffce4f;
+  --warning40-color: #f2a402;
+  --warning50-color: #d19600;
+
+  /* Success */
+  --success-color: #bfddb0;
+  --success10-color: #2c8300;
+  --success20-color: #62a443;
+  --success40-color: #216401;
+  --success50-color: #113200;
+
+  /* Neutral Light */
+  --netural01-color: #fdfdfd;
+
+  /* Neutral Dark */
+  --netural02-color: #23292b;
+
+  /* Netural Shades */
+  --white-color: #fff;
+  --netural20-color: #f6f6f7;
+  --netural30-color: #e3e1e5;
+  --netural40-color: #384145;
+  --netural50-color: #23292b;
+
+  /* add more custom colors below */
+
+  --headings-font-family: "Encode Sans", Times, serif;
+  --roboto-font-family: "Roboto", Times, serif;
+
+  background-color: var(--netural30-color);
+}
+
+/* Typography */
+
+.h1-typo {
+  font-family: var(--headings-font-family);
+  font-size: 72pt;
+}
+
+.h2-typo {
+  font-family: var(--headings-font-family);
+  font-size: 48pt;
+}
+
+.h3-typo {
+  font-family: var(--headings-font-family);
+  font-size: 32pt;
+}
+
+.h4-typo {
+  font-family: var(--headings-font-family);
+  font-size: 24pt;
+}
+
+.h5-typo {
+  font-family: var(--headings-font-family);
+  font-size: 20pt;
+}
+
+.h5-typo {
+  font-family: var(--headings-font-family);
+  font-size: 16pt;
+}
+
+/* Body, Subtitles, Button */
+
+.sub1-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 20pt;
+}
+
+.sub2-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 16pt;
+}
+
+.body1-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 20pt;
+}
+
+.body2-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 16pt;
+}
+
+.btn-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 16pt;
+}
+
+.cap-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 14pt;
+}
+
+.overline-typo {
+  font-family: var(--roboto-font-family);
+  font-size: 10pt;
+}
+
+/* Background */
+
+.bg-page-color {
+  background-color: var(--netural20-color);
+}
+
+.bg-section {
+  background-color: var(--netural01-color);
+  stroke: var(--netural30-color);
+  border-radius: 12px;
+}
+
+/* Text class */
+
+.text-primary-color {
+  color: var(--primary-color);
+}
+.text-secondary-color {
+  color: var(--secondary-color);
+}
+
+.text-body-color {
+  color: var(--netural50-color);
+}
