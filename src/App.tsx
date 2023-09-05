@@ -1,5 +1,5 @@
-import "./custom.css";
-import PokeTable from "./features/Pokemon/PokeTable";
+import "src/custom.css";
+import PokeTable from "src/features/Pokemon/PokeTable";
 
 function App() {
   return (

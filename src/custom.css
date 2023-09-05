@@ -1,7 +1,7 @@
 /* Roboto Regular */
 @font-face {
   font-family: "Roboto";
-  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("src/assets/fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 /* Encode Sans Regular */
 @font-face {
   font-family: "Encode Sans";
-  src: url("./assets/fonts/EncodeSans-Regular.ttf") format("truetype");
+  src: url("src/assets/fonts/EncodeSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -174,9 +174,19 @@
 .table-border {
   font-family: var(--headings-font-family);
   border: 1px solid var(--netural30-color);
+  border-radius: 5px;
   padding: 8px;
 }
 
 .mg-10 {
   margin: 10px;
+}
+
+/* Style the table rows */
+.table tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Light gray background for odd rows */
+}
+
+.table tr:nth-child(even) {
+  background-color: #fff; /* White background for even rows */
 }

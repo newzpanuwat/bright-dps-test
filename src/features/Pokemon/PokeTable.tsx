@@ -1,8 +1,8 @@
 // Test.tsx
 
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../../api/fetchData";
-import { Pokemon } from "../../interface/pokemon";
+import { fetchData } from "src/api/fetchData";
+import { Pokemon } from "src/interface/pokemon";
 import Button from "src/components/Button";
 
 const PokeTable: React.FC = () => {
@@ -31,7 +31,7 @@ const PokeTable: React.FC = () => {
   return (
     <div style={{ margin: "10pt" }}>
       <div className="h4-typo">Pokemon</div>
-      <table style={{ borderCollapse: "collapse", width: "100%", marginTop: "10pt" }}>
+      <table className="table" style={{ borderCollapse: "collapse", width: "100%", marginTop: "10pt" }}>
         <thead>
           <tr>
             <th className="table-border">No.</th>
