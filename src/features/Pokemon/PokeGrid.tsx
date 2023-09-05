@@ -10,9 +10,9 @@ const PokeGrid: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const [offset, setOffSet] = useState<number>(0);
 
-  const currentPageAmount = data.length;
+  const currentPageAmount: number = data.length;
 
-  useEffect(() => {
+  const fetch = () => {
     fetchData(`/pokemon?limit=${defaultValues}&offset=${offset}`)
       .then((result) => {
         setData(result);
@@ -20,6 +20,10 @@ const PokeGrid: React.FC = () => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
+  };
+
+  useEffect(() => {
+    fetch();
   }, [offset]);
 
   const onClickNext = (value: number) => {
@@ -52,11 +56,9 @@ const PokeGrid: React.FC = () => {
   };
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div className="text-body1 h5-typo" style={{ marginTop: "10rem", marginLeft: "3rem", marginBottom: "1rem" }}>
-          All the Pokemon!
-        </div>
-        <div className="text-body1 h5-typo" style={{ marginTop: "10rem", marginRight: "5rem" }}>
+      <div className="flex-container">
+        <div className="text-body1 h5-typo title-label">All the Pokemon!</div>
+        <div className="text-body1 h5-typo mgt-10, mgr-5">
           <RadioButtonGroup />
         </div>
       </div>
@@ -64,7 +66,7 @@ const PokeGrid: React.FC = () => {
       {/* Grid */}
       <div className="columns">
         {data.map((item, idx) => (
-          <div key={idx} style={{ marginLeft: "3.5rem", marginBottom: "1.5rem" }} className="poke-card-section">
+          <div className="poke-card-section mgl-3-5 mgb-1-5" key={idx}>
             <div style={{ display: "flex" }}>
               <div className="circle">
                 <img src={`${baseImageURL}/${item.url.split("/")[6]}.png`}></img>
@@ -76,14 +78,11 @@ const PokeGrid: React.FC = () => {
           </div>
         ))}
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div
-          className="text-body1 h5-typo text-primary-color cursor"
-          style={{ marginLeft: "4rem", marginBottom: "1rem" }}
-        >
+      <div className="flex-container">
+        <div className="text-body1 h5-typo text-primary-color cursor mgl-4 mgb-1">
           <a onClick={() => onClickPrev(defaultValues)}>Previous {page == 1 ? "" : currentPageAmount}</a>
         </div>
-        <div className="text-body1 h5-typo text-primary-color cursor" style={{ marginRight: "5rem" }}>
+        <div className="text-body1 h5-typo text-primary-color cursor mgr-5">
           <a onClick={() => onClickNext(defaultValues)}>Next {currentPageAmount}</a>
         </div>
       </div>
