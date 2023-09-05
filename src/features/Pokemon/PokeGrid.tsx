@@ -56,9 +56,9 @@ const PokeGrid: React.FC = () => {
   };
   return (
     <>
-      <div className="flex-container">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="text-body1 h5-typo title-label">All the Pokemon!</div>
-        <div className="text-body1 h5-typo mgt-10, mgr-5">
+        <div className="text-body1 h5-typo mgt-10 mgr-5">
           <RadioButtonGroup />
         </div>
       </div>
@@ -67,7 +67,7 @@ const PokeGrid: React.FC = () => {
       <div className="columns">
         {data.map((item, idx) => (
           <div className="poke-card-section mgl-3-5 mgb-1-5" key={idx}>
-            <div style={{ display: "flex" }}>
+            <div className="flex">
               <div className="circle">
                 <img src={`${baseImageURL}/${item.url.split("/")[6]}.png`}></img>
               </div>
@@ -78,7 +78,7 @@ const PokeGrid: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="flex-container">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="text-body1 h5-typo text-primary-color cursor mgl-4 mgb-1">
           <a onClick={() => onClickPrev(defaultValues)}>Previous {page == 1 ? "" : currentPageAmount}</a>
         </div>

@@ -198,6 +198,10 @@
   margin-left: 0.75rem;
 }
 
+.flex {
+  display: flex;
+}
+
 .flex-container {
   display: flex;
   justify-content: "space-between";
