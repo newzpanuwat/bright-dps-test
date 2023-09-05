@@ -170,3 +170,13 @@
 .text-body-color {
   color: var(--netural50-color);
 }
+
+.table-border {
+  font-family: var(--headings-font-family);
+  border: 1px solid var(--netural30-color);
+  padding: 8px;
+}
+
+.mg-10 {
+  margin: 10px;
+}
