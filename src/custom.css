@@ -180,17 +180,12 @@
   padding: 8px;
 }
 
-.mg-10 {
-  margin: 10px;
-}
-
-/* Style the table rows */
 .table tr:nth-child(odd) {
-  background-color: #f2f2f2; /* Light gray background for odd rows */
+  background-color: #f2f2f2;
 }
 
 .table tr:nth-child(even) {
-  background-color: #fff; /* White background for even rows */
+  background-color: #fff;
 }
 
 .circle {
@@ -203,21 +198,13 @@
   margin-left: 0.75rem;
 }
 
-.flex-container {
+.flex {
   display: flex;
-  flex-wrap: wrap;
-  width: 100px; /* Adjust the width as needed */
 }
 
-.flex-item {
-  flex: 1;
-  min-width: calc(25% - 10px); /* Adjust the width and margins as needed */
-  margin: 5px;
-  height: 100px; /* Adjust the height as needed */
-  background-color: lightgray; /* Gray color */
+.flex-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: "space-between";
 }
 
 .columns {
@@ -229,4 +216,46 @@
 
 .cursor {
   cursor: pointer;
+}
+
+.title-label {
+  margin-top: 10rem;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mg-10 {
+  margin: 10px;
+}
+
+.mgt-3 {
+  margin-top: 3rem;
+}
+
+.mgt-5 {
+  margin-top: 5rem;
+}
+
+.mgt-10 {
+  margin-top: 10rem;
+}
+
+.mgr-5 {
+  margin-right: 5rem;
+}
+
+.mgl-3-5 {
+  margin-left: 3.5rem;
+}
+
+.mgl-4 {
+  margin-left: 4rem;
+}
+
+.mgb-1 {
+  margin-bottom: 1rem;
+}
+
+.mgb-1-5 {
+  margin-bottom: 1.5rem;
 }
