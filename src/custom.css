@@ -151,13 +151,15 @@
   background-color: var(--netural20-color);
 }
 
-.bg-section {
+.poke-card-section {
   background-color: var(--netural01-color);
   stroke: var(--netural30-color);
   border-radius: 12px;
+  width: 400px;
+  height: 120px;
 }
 
-/* Text class */
+/* Custom CSS */
 
 .text-primary-color {
   color: var(--primary-color);
@@ -189,4 +191,42 @@
 
 .table tr:nth-child(even) {
   background-color: #fff; /* White background for even rows */
+}
+
+.circle {
+  width: 95px;
+  height: 95px;
+  background-color: var(--netural30-color);
+  border-radius: 50%;
+  align-items: "center";
+  margin-top: 1rem;
+  margin-left: 0.75rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px; /* Adjust the width as needed */
+}
+
+.flex-item {
+  flex: 1;
+  min-width: calc(25% - 10px); /* Adjust the width and margins as needed */
+  margin: 5px;
+  height: 100px; /* Adjust the height as needed */
+  background-color: lightgray; /* Gray color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.cursor {
+  cursor: pointer;
 }

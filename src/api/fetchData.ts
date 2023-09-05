@@ -3,7 +3,7 @@
 import axios, { AxiosResponse } from "axios";
 import { Pokemon } from "../interface/pokemon";
 import { ApiResponse } from "../interface/apiResponse";
-import { baseURL } from "../global";
+import { baseURL } from "../util/global";
 
 const api = axios.create({
   baseURL,
