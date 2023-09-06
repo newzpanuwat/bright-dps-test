@@ -14,6 +14,12 @@ Requirements:
 
 # Installation
 
+- Node version
+
+```
+   node 16.18.1+
+```
+
 - Yarn
 
 ```
@@ -38,4 +44,10 @@ Requirements:
 
 ```
    $ yarn build
+```
+
+- Go browsers
+
+```
+   $ http://127.0.0.1:5173/
 ```
