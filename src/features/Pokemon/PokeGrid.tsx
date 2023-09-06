@@ -1,14 +1,17 @@
 import "src/custom.css";
-import RadioButtonGroup from "src/components/RadioButtonGroup";
 import React, { useEffect, useState } from "react";
 import { fetchData } from "src/api/fetchData";
 import { Pokemon } from "src/interface/pokemon";
 import { baseImageURL, defaultValues } from "src/util/global";
 
+import _ from "lodash";
+
 const PokeGrid: React.FC = () => {
   const [data, setData] = useState<Pokemon[]>([]);
+  const [sortedID, setSortedID] = useState<Pokemon[]>([]);
   const [page, setPage] = useState<number>(1);
   const [offset, setOffSet] = useState<number>(0);
+  const [sortBy, setSortBy] = useState<string>("id");
 
   const currentPageAmount: number = data.length;
 
@@ -16,6 +19,7 @@ const PokeGrid: React.FC = () => {
     fetchData(`/pokemon?limit=${defaultValues}&offset=${offset}`)
       .then((result) => {
         setData(result);
+        setSortedID(result);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -54,12 +58,54 @@ const PokeGrid: React.FC = () => {
     setOffSet(currentVal);
     setPage(currentPage);
   };
+
+  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSortBy(event.target.value);
+    console.log("event.target.value", event.target.value);
+
+    if ((event.target.value || sortBy) === "name") {
+      let orderName = _.orderBy(data, ["name"], ["asc"]);
+      setData(orderName);
+    }
+    if ((event.target.value || sortBy) === "id") {
+      console.log("aaa");
+
+      setData(sortedID);
+    }
+
+    // console.log(sortBy);
+  };
+
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="text-body1 h5-typo title-label">All the Pokemon!</div>
         <div className="text-body1 h5-typo mgt-10 mgr-5">
-          <RadioButtonGroup />
+          <div>
+            <label className="cap-typo">
+              <input
+                type="radio"
+                name="sortName"
+                value="name"
+                checked={sortBy === "name"}
+                onChange={handleOptionChange}
+                style={{ margin: "10px" }}
+              />
+              Sort name
+            </label>
+
+            <label className="cap-typo">
+              <input
+                type="radio"
+                style={{ margin: "10px" }}
+                name="sortID"
+                value="id"
+                checked={sortBy === "id"}
+                onChange={handleOptionChange}
+              />
+              Sort ID
+            </label>
+          </div>
         </div>
       </div>
 
