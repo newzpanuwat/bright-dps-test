@@ -1,10 +1,10 @@
 import "src/custom.css";
+import _ from "lodash";
 import React, { useEffect, useState } from "react";
 import { fetchData } from "src/api/fetchData";
 import { Pokemon } from "src/interface/pokemon";
 import { baseImageURL, defaultValues } from "src/util/global";
-
-import _ from "lodash";
+import { capitalize } from "src/util/capitalize";
 
 const PokeGrid: React.FC = () => {
   const [data, setData] = useState<Pokemon[]>([]);
@@ -28,6 +28,7 @@ const PokeGrid: React.FC = () => {
 
   useEffect(() => {
     fetch();
+    setSortBy("id");
   }, [offset]);
 
   const onClickNext = (value: number) => {
@@ -61,19 +62,13 @@ const PokeGrid: React.FC = () => {
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSortBy(event.target.value);
-    console.log("event.target.value", event.target.value);
-
     if ((event.target.value || sortBy) === "name") {
       let orderName = _.orderBy(data, ["name"], ["asc"]);
       setData(orderName);
     }
     if ((event.target.value || sortBy) === "id") {
-      console.log("aaa");
-
       setData(sortedID);
     }
-
-    // console.log(sortBy);
   };
 
   return (
@@ -91,7 +86,7 @@ const PokeGrid: React.FC = () => {
                 onChange={handleOptionChange}
                 style={{ margin: "10px" }}
               />
-              Sort name
+              Sort Name
             </label>
 
             <label className="cap-typo">
@@ -118,7 +113,7 @@ const PokeGrid: React.FC = () => {
                 <img src={`${baseImageURL}/${item.url.split("/")[6]}.png`}></img>
               </div>
               <div className="h5-typo" style={{ margin: "3rem" }}>
-                {item.name}
+                {capitalize(item.name)}
               </div>
             </div>
           </div>
@@ -126,7 +121,7 @@ const PokeGrid: React.FC = () => {
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="text-body1 h5-typo text-primary-color cursor mgl-4 mgb-1">
-          <a onClick={() => onClickPrev(defaultValues)}>Previous {page == 1 ? "" : currentPageAmount}</a>
+          <a onClick={() => onClickPrev(defaultValues)}>Previous {page === 1 ? "" : currentPageAmount}</a>
         </div>
         <div className="text-body1 h5-typo text-primary-color cursor mgr-5">
           <a onClick={() => onClickNext(defaultValues)}>Next {currentPageAmount}</a>

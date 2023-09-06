@@ -18,7 +18,7 @@ const RadioButtonGroup: React.FC = () => {
           onChange={handleOptionChange}
           style={{ margin: "10px" }}
         />
-        Sort name
+        Sort Name
       </label>
 
       <label className="cap-typo">
