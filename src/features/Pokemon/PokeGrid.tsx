@@ -15,6 +15,11 @@ const PokeGrid: React.FC = () => {
 
   const currentPageAmount: number = data.length;
 
+  useEffect(() => {
+    fetch();
+    setSortBy("id");
+  }, [offset]);
+
   const fetch = () => {
     fetchData(`/pokemon?limit=${defaultValues}&offset=${offset}`)
       .then((result) => {
@@ -25,11 +30,6 @@ const PokeGrid: React.FC = () => {
         console.error("Error fetching data:", error);
       });
   };
-
-  useEffect(() => {
-    fetch();
-    setSortBy("id");
-  }, [offset]);
 
   const onClickNext = (value: number) => {
     let currentVal: number = 0;
@@ -73,6 +73,7 @@ const PokeGrid: React.FC = () => {
 
   return (
     <>
+      {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="text-body1 h5-typo title-label">All the Pokemon!</div>
         <div className="text-body1 h5-typo mgt-10 mgr-5">
@@ -119,6 +120,8 @@ const PokeGrid: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {/* Prev / Next */}
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="text-body1 h5-typo text-primary-color cursor mgl-4 mgb-1">
           <a onClick={() => onClickPrev(defaultValues)}>Previous {page === 1 ? "" : currentPageAmount}</a>
