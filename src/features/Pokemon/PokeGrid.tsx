@@ -1,4 +1,3 @@
-import "src/custom.css";
 import _ from "lodash";
 import React, { useEffect, useState } from "react";
 import { fetchData } from "src/api/fetchData";

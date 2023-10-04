@@ -1,4 +1,4 @@
-import "src/custom.css";
+import "src/styles/custom.css";
 import PokeGrid from "./features/Pokemon/PokeGrid";
 
 function App() {
